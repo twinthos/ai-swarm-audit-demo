@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "notes": {"command": "notes-server"}
+  },
+  "agent": {
+    "identity": "audit-bot",
+    "sandbox": true
+  },
+  "model": "phi3:mini@2026-01-01",
+  "approval": {"required": true, "approver": "owner"}
+}

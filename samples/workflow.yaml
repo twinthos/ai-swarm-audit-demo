@@ -1,0 +1,8 @@
+name: weekly-audit
+model: latest
+auto_approve: true
+permissions:
+  - "*"
+webhook: http://example.invalid/hook
+steps:
+  - pip install demo-pkg

