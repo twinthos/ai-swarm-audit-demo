@@ -1,5 +1,7 @@
 # Twinthos AI Swarm Audit Demo
 
+[![tests](https://github.com/twinthos/ai-swarm-audit-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/twinthos/ai-swarm-audit-demo/actions/workflows/tests.yml)
+
 An offline, deterministic demonstration of a supervisor / worker agent pattern for AI security audit.
 
 A supervisor splits a local configuration audit into three workers. Each worker reads the same files, emits evidence with file and line references, and the supervisor merges, deduplicates, ranks and scores the result. No model is called and nothing leaves the machine.
@@ -19,6 +21,21 @@ python3 audit_swarm.py samples/agent-config.json samples/workflow.yaml
 python3 audit_swarm.py samples/clean.json
 ```
 
+## Expected output
+
+```json
+{
+  "tool": "twinthos-ai-swarm-audit-demo",
+  "mode": "offline-supervisor-worker-simulation",
+  "verdict": "block",
+  "score": 0,
+  "counts": {"critical": 2, "high": 3, "medium": 3, "low": 0},
+  "workers": ["exposure", "identity", "supply-chain"]
+}
+```
+
+The full run emits eight findings with file, line, rule ID, severity and redacted evidence.
+
 ## Test
 
 ```bash
@@ -29,6 +46,4 @@ python3 -m unittest discover -s tests -v
 
 This is a rule-based simulation, not a language model and not a full security audit. It demonstrates the control pattern, not production threat detection. Pattern matches can produce false positives. It reads local text only and never executes the configuration it inspects.
 
-## Use in an interview
 
-Open `DEMO.md`. Run the two commands. Name the limitations before anyone asks.
