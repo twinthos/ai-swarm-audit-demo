@@ -1,11 +1,19 @@
 # Security policy
 
-This project is defensive. It reads local text and emits JSON.
+## Reporting a vulnerability
 
-- No network calls.
-- No model calls.
-- No file writes.
-- No execution of target configuration.
-- Tokens matching the built-in pattern are redacted before output.
+Use GitHub's private reporting: **Security** tab, then **Report a vulnerability**.
+That opens a private advisory visible only to the maintainers.
 
-Do not submit real secrets as sample data. Report issues through a private GitHub security advisory, not a public issue.
+Do not open a public issue for a security report.
+
+## What to expect
+
+- Acknowledgement within three working days.
+- A fix or a documented mitigation within thirty days for anything confirmed.
+- Credit in the advisory, unless you ask otherwise.
+
+## Scope
+
+This repository and the code it ships. Findings in third-party dependencies
+belong upstream; tell us anyway and we will help route them.
